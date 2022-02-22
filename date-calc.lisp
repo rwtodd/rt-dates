@@ -87,6 +87,9 @@ The days can be given as: (1) integer universal-time,
 	 (- (ceiling ye 400) (ceiling ys 400))))))
 
 (defun weekdays-between (start end &key inclusive)
+  "give the number of weekdays between the start and end dates.
+The days can be given as: (1) integer universal-time,
+(2) a list '(year month day) (3) a list (year yday)"
   (let ((days (days-between start end :inclusive inclusive))
 	(day-of-week
 	  (multiple-value-bind (y m d) (date-2-ymd start)
